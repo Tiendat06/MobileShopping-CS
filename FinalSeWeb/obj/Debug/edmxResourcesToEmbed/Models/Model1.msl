@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FINAL_SEModelStoreContainer" CdmEntityContainer="FINAL_SEEntities">
+    <EntitySetMapping Name="CUSTOMERs">
+      <EntityTypeMapping TypeName="FINAL_SEModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_Birth" ColumnName="Customer_Birth" />
+          <ScalarProperty Name="Customer_Gender" ColumnName="Customer_Gender" />
+          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+          <ScalarProperty Name="Customer_Email" ColumnName="Customer_Email" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTOMER_ACCOUNT">
+      <EntityTypeMapping TypeName="FINAL_SEModel.CUSTOMER_ACCOUNT">
+        <MappingFragment StoreEntitySet="CUSTOMER_ACCOUNT">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Account_Password" ColumnName="Account_Password" />
+          <ScalarProperty Name="Customer_Level" ColumnName="Customer_Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AGENTs">
+      <EntityTypeMapping TypeName="FINAL_SEModel.AGENT">
+        <MappingFragment StoreEntitySet="AGENT">
+          <ScalarProperty Name="Agent_Phone" ColumnName="Agent_Phone" />
+          <ScalarProperty Name="Agent_Email" ColumnName="Agent_Email" />
+          <ScalarProperty Name="Agent_Address" ColumnName="Agent_Address" />
+          <ScalarProperty Name="Agent_Name" ColumnName="Agent_Name" />
+          <ScalarProperty Name="Agent_ID" ColumnName="Agent_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AGENT_ACCOUNT">
+      <EntityTypeMapping TypeName="FINAL_SEModel.AGENT_ACCOUNT">
+        <MappingFragment StoreEntitySet="AGENT_ACCOUNT">
+          <ScalarProperty Name="Agent_Level" ColumnName="Agent_Level" />
+          <ScalarProperty Name="Account_Password" ColumnName="Account_Password" />
+          <ScalarProperty Name="Agent_ID" ColumnName="Agent_ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="checkExistedAgent" FunctionName="FINAL_SEModel.Store.checkExistedAgent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FINAL_SEModel.checkExistedAgent_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Agent_Email" ColumnName="Agent_Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ACCOUNTANTs">
+      <EntityTypeMapping TypeName="FINAL_SEModel.ACCOUNTANT">
+        <MappingFragment StoreEntitySet="ACCOUNTANT">
+          <ScalarProperty Name="Accountant_Image" ColumnName="Accountant_Image" />
+          <ScalarProperty Name="Accountant_Password" ColumnName="Accountant_Password" />
+          <ScalarProperty Name="Accountant_UserName" ColumnName="Accountant_UserName" />
+          <ScalarProperty Name="Accountant_Phone" ColumnName="Accountant_Phone" />
+          <ScalarProperty Name="Accountant_Email" ColumnName="Accountant_Email" />
+          <ScalarProperty Name="Accountant_Address" ColumnName="Accountant_Address" />
+          <ScalarProperty Name="Accountant_Birth" ColumnName="Accountant_Birth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Accountant_Name" ColumnName="Accountant_Name" />
+          <ScalarProperty Name="Accountant_ID" ColumnName="Accountant_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GOOD_DELIVERY">
+      <EntityTypeMapping TypeName="FINAL_SEModel.GOOD_DELIVERY">
+        <MappingFragment StoreEntitySet="GOOD_DELIVERY">
+          <ScalarProperty Name="Date_Created_Good_Delivery" ColumnName="Date_Created_Good_Delivery" />
+          <ScalarProperty Name="OrderList_ID" ColumnName="OrderList_ID" />
+          <ScalarProperty Name="Accountant_ID" ColumnName="Accountant_ID" />
+          <ScalarProperty Name="Transaction_ID" ColumnName="Transaction_ID" />
+          <ScalarProperty Name="Good_Delivery_ID" ColumnName="Good_Delivery_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVOICEs">
+      <EntityTypeMapping TypeName="FINAL_SEModel.INVOICE">
+        <MappingFragment StoreEntitySet="INVOICE">
+          <ScalarProperty Name="Status_Invoice" ColumnName="Status_Invoice" />
+          <ScalarProperty Name="Date_Created_Invoice" ColumnName="Date_Created_Invoice" />
+          <ScalarProperty Name="OrderList_ID" ColumnName="OrderList_ID" />
+          <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOBILE_PRODUCT">
+      <EntityTypeMapping TypeName="FINAL_SEModel.MOBILE_PRODUCT">
+        <MappingFragment StoreEntitySet="MOBILE_PRODUCT">
+          <ScalarProperty Name="Image_Product" ColumnName="Image_Product" />
+          <ScalarProperty Name="Quantities" ColumnName="Quantities" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="TypeProduct_ID" ColumnName="TypeProduct_ID" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_LIST">
+      <EntityTypeMapping TypeName="FINAL_SEModel.ORDER_LIST">
+        <MappingFragment StoreEntitySet="ORDER_LIST">
+          <ScalarProperty Name="Status_OrderList" ColumnName="Status_OrderList" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Date_Created_OrderList" ColumnName="Date_Created_OrderList" />
+          <ScalarProperty Name="UserName_Customer" ColumnName="UserName_Customer" />
+          <ScalarProperty Name="UserName_Agent" ColumnName="UserName_Agent" />
+          <ScalarProperty Name="OrderList_ID" ColumnName="OrderList_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_LIST_DETAILS">
+      <EntityTypeMapping TypeName="FINAL_SEModel.ORDER_LIST_DETAILS">
+        <MappingFragment StoreEntitySet="ORDER_LIST_DETAILS">
+          <ScalarProperty Name="Remain_Quantities" ColumnName="Remain_Quantities" />
+          <ScalarProperty Name="Total_Money" ColumnName="Total_Money" />
+          <ScalarProperty Name="Delivery_Date" ColumnName="Delivery_Date" />
+          <ScalarProperty Name="Quantities" ColumnName="Quantities" />
+          <ScalarProperty Name="OrderList_ID" ColumnName="OrderList_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYMENT_METHOD">
+      <EntityTypeMapping TypeName="FINAL_SEModel.PAYMENT_METHOD">
+        <MappingFragment StoreEntitySet="PAYMENT_METHOD">
+          <ScalarProperty Name="Method_Name" ColumnName="Method_Name" />
+          <ScalarProperty Name="PaymentMethod_ID" ColumnName="PaymentMethod_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECEIPT_DETAILS">
+      <EntityTypeMapping TypeName="FINAL_SEModel.RECEIPT_DETAILS">
+        <MappingFragment StoreEntitySet="RECEIPT_DETAILS">
+          <ScalarProperty Name="Quantities" ColumnName="Quantities" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Receipt_ID" ColumnName="Receipt_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUPPLIERs">
+      <EntityTypeMapping TypeName="FINAL_SEModel.SUPPLIER">
+        <MappingFragment StoreEntitySet="SUPPLIER">
+          <ScalarProperty Name="Suppler_Phone" ColumnName="Suppler_Phone" />
+          <ScalarProperty Name="Supplier_Email" ColumnName="Supplier_Email" />
+          <ScalarProperty Name="Supplier_Address" ColumnName="Supplier_Address" />
+          <ScalarProperty Name="Supplier_Name" ColumnName="Supplier_Name" />
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSACTIONs">
+      <EntityTypeMapping TypeName="FINAL_SEModel.TRANSACTION">
+        <MappingFragment StoreEntitySet="TRANSACTION">
+          <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
+          <ScalarProperty Name="Status_Transaction" ColumnName="Status_Transaction" />
+          <ScalarProperty Name="Date_Created_Transaction" ColumnName="Date_Created_Transaction" />
+          <ScalarProperty Name="PaymentMethod_ID" ColumnName="PaymentMethod_ID" />
+          <ScalarProperty Name="Transaction_ID" ColumnName="Transaction_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPE_PRODUCT">
+      <EntityTypeMapping TypeName="FINAL_SEModel.TYPE_PRODUCT">
+        <MappingFragment StoreEntitySet="TYPE_PRODUCT">
+          <ScalarProperty Name="TypeProductName" ColumnName="TypeProductName" />
+          <ScalarProperty Name="TypeProduct_ID" ColumnName="TypeProduct_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WAREHOUSE_RECEIPT">
+      <EntityTypeMapping TypeName="FINAL_SEModel.WAREHOUSE_RECEIPT">
+        <MappingFragment StoreEntitySet="WAREHOUSE_RECEIPT">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="WareHouse_Address" ColumnName="WareHouse_Address" />
+          <ScalarProperty Name="Driver_Name" ColumnName="Driver_Name" />
+          <ScalarProperty Name="Date_Created_Receipt" ColumnName="Date_Created_Receipt" />
+          <ScalarProperty Name="Accountant_ID" ColumnName="Accountant_ID" />
+          <ScalarProperty Name="Receipt_ID" ColumnName="Receipt_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

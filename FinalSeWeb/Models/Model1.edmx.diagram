@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="504c819521a84ad49047f3ea39e08fe4" Name="Diagram1">
+        <EntityTypeShape EntityType="FINAL_SEModel.CUSTOMER" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINAL_SEModel.CUSTOMER_ACCOUNT" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="FINAL_SEModel.FK_CUSTOMERACCOUNT_CUSTOMER" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FINAL_SEModel.AGENT" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="FINAL_SEModel.AGENT_ACCOUNT" Width="1.5" PointX="3" PointY="5" />
+        <AssociationConnector Association="FINAL_SEModel.FK_AGENTACCOUNT_AGENT" />
+        <EntityTypeShape EntityType="FINAL_SEModel.ACCOUNTANT" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="FINAL_SEModel.GOOD_DELIVERY" Width="1.5" PointX="7.5" PointY="5.25" />
+        <EntityTypeShape EntityType="FINAL_SEModel.INVOICE" Width="1.5" PointX="7.5" PointY="12.125" />
+        <EntityTypeShape EntityType="FINAL_SEModel.MOBILE_PRODUCT" Width="1.5" PointX="8.25" PointY="15.875" />
+        <EntityTypeShape EntityType="FINAL_SEModel.ORDER_LIST" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="FINAL_SEModel.ORDER_LIST_DETAILS" Width="1.5" PointX="10.5" PointY="5.25" />
+        <EntityTypeShape EntityType="FINAL_SEModel.PAYMENT_METHOD" Width="1.5" PointX="7.5" PointY="9.375" />
+        <EntityTypeShape EntityType="FINAL_SEModel.RECEIPT_DETAILS" Width="1.5" PointX="12.5" PointY="9.375" />
+        <EntityTypeShape EntityType="FINAL_SEModel.SUPPLIER" Width="1.5" PointX="6" PointY="15.375" />
+        <EntityTypeShape EntityType="FINAL_SEModel.TRANSACTION" Width="1.5" PointX="9.75" PointY="11.875" />
+        <EntityTypeShape EntityType="FINAL_SEModel.TYPE_PRODUCT" Width="1.5" PointX="6" PointY="18.25" />
+        <EntityTypeShape EntityType="FINAL_SEModel.WAREHOUSE_RECEIPT" Width="1.5" PointX="7.5" PointY="1.75" />
+        <AssociationConnector Association="FINAL_SEModel.FK_GOODDELIVERY_ACCOUNTANT" />
+        <AssociationConnector Association="FINAL_SEModel.FK_WAREHOUSERECEIPT_ACCOUNTANT" />
+        <AssociationConnector Association="FINAL_SEModel.FK_ORDERLIST_AGENTACCOUNT" />
+        <AssociationConnector Association="FINAL_SEModel.FK_ORDERLIST_CUSTOMERACCOUNT" />
+        <AssociationConnector Association="FINAL_SEModel.FK_GOODDELIVERY_ORDERLIST" />
+        <AssociationConnector Association="FINAL_SEModel.FK_GOODDELIVERY_TRANSACTION" />
+        <AssociationConnector Association="FINAL_SEModel.FK_INVOICE_ORDERLIST" />
+        <AssociationConnector Association="FINAL_SEModel.FK_TRANSACTION_INVOICE" />
+        <AssociationConnector Association="FINAL_SEModel.FK_MOBILEPRODUCT_Supplier" />
+        <AssociationConnector Association="FINAL_SEModel.FK_MOBILEPRODUCT_TYPEPRODUCT" />
+        <AssociationConnector Association="FINAL_SEModel.FK_ORDERLISTDETAILS_MOBILEPRODUCTS" />
+        <AssociationConnector Association="FINAL_SEModel.FK_RECEIPTDETAILS_MOBILEPRODUCTS" />
+        <AssociationConnector Association="FINAL_SEModel.FK_ORDERLISTDETAILS_ORDER_LIST" />
+        <AssociationConnector Association="FINAL_SEModel.FK_TRANSACTION_PAYMENTMETHOD" />
+        <AssociationConnector Association="FINAL_SEModel.FK_RECEIPTDETAILS_WAREHOUSE_RECEIPT" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
