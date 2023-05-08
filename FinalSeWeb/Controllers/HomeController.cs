@@ -24,10 +24,7 @@ namespace FinalSeWeb.Controllers
             return View(products);
         }
 
-        public ActionResult Describe()
-        {
-            return View();
-        }
+       
         
         
     }

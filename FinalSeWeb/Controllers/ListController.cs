@@ -9,8 +9,9 @@ namespace FinalSeWeb.Controllers
     public class ListController : Controller
     {
         // GET: List
-        public ActionResult OrderList()
+        public ActionResult OrderList(string Quan)
         {
+            ViewBag.Quantity = Quan;
             return View();
         }
     }

@@ -23,7 +23,19 @@ namespace FinalSeWeb.Controllers
             return View(mobilePro);
         }
 
+       /* public ActionResult Add(string quanVal)
+        {
+            *//*ViewBag.Quantity = Quantity;
+            return View(Quantity);*//*
+            return RedirectToAction("OrderList", "List", new { quan = quanVal });
+        }*/
 
+        [HttpPost]
+        public ActionResult Add()
+        {
+            string quantity = Request.Form["quantity"];
+            return RedirectToAction("OrderList","List",new {quantity = quantity});
+        }
         
 
     }
