@@ -23,6 +23,8 @@
     <Property Name="Customer_Level" Type="Int32" />
     <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_CUSTOMERACCOUNT_CUSTOMER" FromRole="CUSTOMER_ACCOUNT" ToRole="CUSTOMER" />
     <NavigationProperty Name="ORDER_LIST" Relationship="FINAL_SEModel.FK_ORDERLIST_CUSTOMERACCOUNT" FromRole="CUSTOMER_ACCOUNT" ToRole="ORDER_LIST" />
+    <Property Name="code_forgot_pass" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Date_Create_Code_Forgot" Type="DateTime" Precision="0" />
   </EntityType>
   <Association Name="FK_CUSTOMERACCOUNT_CUSTOMER">
     <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
@@ -214,12 +216,12 @@
     <Property Name="Supplier_ID" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="Unit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Quantities" Type="Int32" />
     <Property Name="Image_Product" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="SUPPLIER" Relationship="FINAL_SEModel.FK_MOBILEPRODUCT_Supplier" FromRole="MOBILE_PRODUCT" ToRole="SUPPLIER" />
     <NavigationProperty Name="TYPE_PRODUCT" Relationship="FINAL_SEModel.FK_MOBILEPRODUCT_TYPEPRODUCT" FromRole="MOBILE_PRODUCT" ToRole="TYPE_PRODUCT" />
     <NavigationProperty Name="ORDER_LIST_DETAILS" Relationship="FINAL_SEModel.FK_ORDERLISTDETAILS_MOBILEPRODUCTS" FromRole="MOBILE_PRODUCT" ToRole="ORDER_LIST_DETAILS" />
     <NavigationProperty Name="RECEIPT_DETAILS" Relationship="FINAL_SEModel.FK_RECEIPTDETAILS_MOBILEPRODUCTS" FromRole="MOBILE_PRODUCT" ToRole="RECEIPT_DETAILS" />
+    <Property Name="Product_Quantities" Type="Int32" />
   </EntityType>
   <EntityType Name="ORDER_LIST">
     <Key>

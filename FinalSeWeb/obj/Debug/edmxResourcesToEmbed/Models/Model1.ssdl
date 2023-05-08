@@ -54,6 +54,8 @@
     <Property Name="Customer_ID" Type="varchar" MaxLength="300" />
     <Property Name="Account_Password" Type="varchar" MaxLength="200" />
     <Property Name="Customer_Level" Type="int" />
+    <Property Name="code_forgot_pass" Type="varchar" MaxLength="200" />
+    <Property Name="Date_Create_Code_Forgot" Type="date" />
   </EntityType>
   <EntityType Name="GOOD_DELIVERY">
     <Key>
@@ -84,7 +86,7 @@
     <Property Name="Supplier_ID" Type="varchar" MaxLength="300" />
     <Property Name="Unit" Type="varchar" MaxLength="20" />
     <Property Name="Price" Type="money" />
-    <Property Name="Quantities" Type="int" />
+    <Property Name="Product_Quantities" Type="int" />
     <Property Name="Image_Product" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="ORDER_LIST">
@@ -369,9 +371,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="checkExistedAgent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="user" Type="nvarchar" Mode="In" />
-  </Function>
   <EntityContainer Name="FINAL_SEModelStoreContainer">
     <EntitySet Name="ACCOUNTANT" EntityType="Self.ACCOUNTANT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AGENT" EntityType="Self.AGENT" Schema="dbo" store:Type="Tables" />

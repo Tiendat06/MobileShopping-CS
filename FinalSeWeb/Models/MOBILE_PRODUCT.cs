@@ -27,8 +27,8 @@ namespace FinalSeWeb.Models
         public string Supplier_ID { get; set; }
         public string Unit { get; set; }
         public Nullable<decimal> Price { get; set; }
-        public Nullable<int> Quantities { get; set; }
         public string Image_Product { get; set; }
+        public Nullable<int> Product_Quantities { get; set; }
     
         public virtual SUPPLIER SUPPLIER { get; set; }
         public virtual TYPE_PRODUCT TYPE_PRODUCT { get; set; }

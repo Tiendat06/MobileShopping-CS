@@ -59,6 +59,8 @@
           <Property Name="Customer_ID" Type="varchar" MaxLength="300" />
           <Property Name="Account_Password" Type="varchar" MaxLength="200" />
           <Property Name="Customer_Level" Type="int" />
+          <Property Name="code_forgot_pass" Type="varchar" MaxLength="200" />
+          <Property Name="Date_Create_Code_Forgot" Type="date" />
         </EntityType>
         <EntityType Name="GOOD_DELIVERY">
           <Key>
@@ -89,7 +91,7 @@
           <Property Name="Supplier_ID" Type="varchar" MaxLength="300" />
           <Property Name="Unit" Type="varchar" MaxLength="20" />
           <Property Name="Price" Type="money" />
-          <Property Name="Quantities" Type="int" />
+          <Property Name="Product_Quantities" Type="int" />
           <Property Name="Image_Product" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="ORDER_LIST">
@@ -374,9 +376,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="checkExistedAgent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="user" Type="nvarchar" Mode="In" />
-        </Function>
         <EntityContainer Name="FINAL_SEModelStoreContainer">
           <EntitySet Name="ACCOUNTANT" EntityType="Self.ACCOUNTANT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AGENT" EntityType="Self.AGENT" Schema="dbo" store:Type="Tables" />
@@ -490,6 +489,8 @@
           <Property Name="Customer_Level" Type="Int32" />
           <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_CUSTOMERACCOUNT_CUSTOMER" FromRole="CUSTOMER_ACCOUNT" ToRole="CUSTOMER" />
           <NavigationProperty Name="ORDER_LIST" Relationship="FINAL_SEModel.FK_ORDERLIST_CUSTOMERACCOUNT" FromRole="CUSTOMER_ACCOUNT" ToRole="ORDER_LIST" />
+          <Property Name="code_forgot_pass" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Create_Code_Forgot" Type="DateTime" Precision="0" />
         </EntityType>
         <Association Name="FK_CUSTOMERACCOUNT_CUSTOMER">
           <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
@@ -681,12 +682,12 @@
           <Property Name="Supplier_ID" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="Unit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Quantities" Type="Int32" />
           <Property Name="Image_Product" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="SUPPLIER" Relationship="FINAL_SEModel.FK_MOBILEPRODUCT_Supplier" FromRole="MOBILE_PRODUCT" ToRole="SUPPLIER" />
           <NavigationProperty Name="TYPE_PRODUCT" Relationship="FINAL_SEModel.FK_MOBILEPRODUCT_TYPEPRODUCT" FromRole="MOBILE_PRODUCT" ToRole="TYPE_PRODUCT" />
           <NavigationProperty Name="ORDER_LIST_DETAILS" Relationship="FINAL_SEModel.FK_ORDERLISTDETAILS_MOBILEPRODUCTS" FromRole="MOBILE_PRODUCT" ToRole="ORDER_LIST_DETAILS" />
           <NavigationProperty Name="RECEIPT_DETAILS" Relationship="FINAL_SEModel.FK_RECEIPTDETAILS_MOBILEPRODUCTS" FromRole="MOBILE_PRODUCT" ToRole="RECEIPT_DETAILS" />
+          <Property Name="Product_Quantities" Type="Int32" />
         </EntityType>
         <EntityType Name="ORDER_LIST">
           <Key>
@@ -985,6 +986,8 @@
           <EntitySetMapping Name="CUSTOMER_ACCOUNT">
             <EntityTypeMapping TypeName="FINAL_SEModel.CUSTOMER_ACCOUNT">
               <MappingFragment StoreEntitySet="CUSTOMER_ACCOUNT">
+                <ScalarProperty Name="Date_Create_Code_Forgot" ColumnName="Date_Create_Code_Forgot" />
+                <ScalarProperty Name="code_forgot_pass" ColumnName="code_forgot_pass" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
                 <ScalarProperty Name="Account_Password" ColumnName="Account_Password" />
@@ -1013,14 +1016,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="checkExistedAgent" FunctionName="FINAL_SEModel.Store.checkExistedAgent">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="FINAL_SEModel.checkExistedAgent_Result">
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Agent_Email" ColumnName="Agent_Email" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="ACCOUNTANTs">
             <EntityTypeMapping TypeName="FINAL_SEModel.ACCOUNTANT">
               <MappingFragment StoreEntitySet="ACCOUNTANT">
@@ -1061,8 +1056,8 @@
           <EntitySetMapping Name="MOBILE_PRODUCT">
             <EntityTypeMapping TypeName="FINAL_SEModel.MOBILE_PRODUCT">
               <MappingFragment StoreEntitySet="MOBILE_PRODUCT">
+                <ScalarProperty Name="Product_Quantities" ColumnName="Product_Quantities" />
                 <ScalarProperty Name="Image_Product" ColumnName="Image_Product" />
-                <ScalarProperty Name="Quantities" ColumnName="Quantities" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />

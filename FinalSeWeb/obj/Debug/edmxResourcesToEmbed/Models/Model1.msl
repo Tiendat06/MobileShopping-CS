@@ -17,6 +17,8 @@
     <EntitySetMapping Name="CUSTOMER_ACCOUNT">
       <EntityTypeMapping TypeName="FINAL_SEModel.CUSTOMER_ACCOUNT">
         <MappingFragment StoreEntitySet="CUSTOMER_ACCOUNT">
+          <ScalarProperty Name="Date_Create_Code_Forgot" ColumnName="Date_Create_Code_Forgot" />
+          <ScalarProperty Name="code_forgot_pass" ColumnName="code_forgot_pass" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
           <ScalarProperty Name="Account_Password" ColumnName="Account_Password" />
@@ -45,14 +47,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="checkExistedAgent" FunctionName="FINAL_SEModel.Store.checkExistedAgent">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="FINAL_SEModel.checkExistedAgent_Result">
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Agent_Email" ColumnName="Agent_Email" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <EntitySetMapping Name="ACCOUNTANTs">
       <EntityTypeMapping TypeName="FINAL_SEModel.ACCOUNTANT">
         <MappingFragment StoreEntitySet="ACCOUNTANT">
@@ -93,8 +87,8 @@
     <EntitySetMapping Name="MOBILE_PRODUCT">
       <EntityTypeMapping TypeName="FINAL_SEModel.MOBILE_PRODUCT">
         <MappingFragment StoreEntitySet="MOBILE_PRODUCT">
+          <ScalarProperty Name="Product_Quantities" ColumnName="Product_Quantities" />
           <ScalarProperty Name="Image_Product" ColumnName="Image_Product" />
-          <ScalarProperty Name="Quantities" ColumnName="Quantities" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Unit" ColumnName="Unit" />
           <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
