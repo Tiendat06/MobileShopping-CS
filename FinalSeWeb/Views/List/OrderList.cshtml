@@ -1,0 +1,88 @@
+﻿@model FinalSeWeb.Models.ORDER_LIST
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderList</title>
+</head>
+<body>
+    <div class="container p-5">
+        <div class="row">
+            <div class="package__content col-l-6 col-md-6 col-sm-12">
+
+                <div class="package__content--inner col-l-12 col-md-12 col-sm-12">
+                    <img class="package__content--img w-100" src="~/assets/img/ip12_256gb.jpg" alt="" srcset="">
+                    <p class="package__content--para"><?= $Product_Name ?></p>
+                    <p class="package__content--para">Quantity: </p>
+                    <p class="package__content--para">Remain Quantity: <?php ?></p>
+                    <!-- <input type="hidden" name="" id="remain_quan" value=""> -->
+                    <p class="package__content--para package__content--para-price">
+                        <?= number_format($total_money) ?> <span class="package__content--unit"><?= $Unit ?></span>
+                    </p>
+
+                    <a style="color: red;" href="?page=my_package_rm&OrL=<?= $Orderlist_ID ?>&Product=<?= $product_ID ?>" class="package__content--del d-flex align-items-center justify-content-center">
+                        <span class="package__content--para"> Remove</span>
+                        <i style="font-size: 1.2rem; text-decoration: none;" class="fa-solid fa-circle-minus pt-1 pl-2"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="package__payment col-l-6 col-md-6 col-sm-12">
+                <h1 class="package__payment--title">Order info</h1>
+
+                <div class="package__payment--info">
+                    <input class="package__payment--inp" placeholder="Your name *" type="text" value="<?= $cus_Name ?>" name="" id="">
+                </div>
+
+                <div class="package__payment--info">
+                    <input class="package__payment--inp" placeholder="Your phone *" type="text" value="<?= $cus_Phone ?>" name="" id="">
+                </div>
+
+                <div class="package__payment--info">
+                    <input class="package__payment--inp" placeholder="Your email*" type="text" value="<?= $cus_Email ?>" name="" id="">
+                </div>
+
+                <div class="package__payment--info">
+                    <p class="package__payment--para">Delivery location</p>
+                    <input class="package__payment--inp" placeholder="Your delivery location*" type="text" value="<?= $cus_Address ?>" name="" id="">
+                </div>
+
+                <div class="package__payment--info">
+                    <p class="package__payment--para">Payment method</p>
+                    <div class="package__payment--inp package__payment--method">
+                        <label onclick="onClickCash(id)" for="Cash" id="<?= getPaymentMethod('Cash') ?>" class="package__payment--method-check">
+                            <input value="Cash" type="radio" value="" name="payment-method" id="Cash" required>
+                            Cash
+                            <img class="w-25" src="~/assets/img/cash-payment.jpg" alt="" srcset="">
+                        </label>
+
+                        <label onclick="onClickVNPay(id)" for="vnpay" id="<?= getPaymentMethod('VNPay') ?>" class="package__payment--method-check">
+                            <input value="VNPay" type="radio" value="" name="payment-method" id="vnpay" required>
+                            VNPay
+                            <img class="w-25" src="~/assets/img/vnpay-payment.jpg" alt="" srcset="">
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="package__payment--info package__payment--checkbox">
+                    <input type="checkbox" name="" id="com-invoice">
+                    <label for="com-invoice" class="package__payment--para">Request a company invoice (Please enter your email to receive a VAT invoice)</label>
+                </div>
+
+                <a id="package__payment--btn" class="w-75 package__payment--btn">Order confirmation</a>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>
